@@ -1,16 +1,14 @@
 <div>
   <% if current_user.admin == true %>
-    <% @users.each do |user| %>
-      <p><div>
-        Email: <%= user.email %>
-        <%= form_for(user, url: dashboard_path(user), method: :patch) do |form| %>
-          <div>
-            <%= form.label :admin, "Admin" %>
-            <%= form.check_box :admin, checked: user.admin? %>
-            <%= form.submit "Update Admin Status" %>
-          </div>
-        <% end %>
-      </div></p>
+    <h1>User Admin Status</h1>
+    <%= form_tag(dashboard_path, method: :patch) do %>
+      <% @users.each do |user| %>
+        <div>
+          <%= check_box_tag "user[#{user.id}]", user.id, user.admin %>
+          <%= user.email %>
+        </div>
+      <% end %>
+      <%= submit_tag "Update Admin Status" %>
     <% end %>
   <% else %>
     <h1>Dashboard</h1>
