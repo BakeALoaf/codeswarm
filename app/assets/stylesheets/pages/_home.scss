@@ -1,6 +1,10 @@
 // Specific CSS for your home-page
 .homepage {
   height: 100vh;
-  width: 100vw;
-  background-image: linear-gradient(to bottom left, rgb(0, 0, 143), black);
+  width: 99vw;
+  background-image: linear-gradient(to bottom left, rgb(41, 0, 41), black);
+}
+.homepage img {
+  width: 100%;
+  height: 100%;
 }
