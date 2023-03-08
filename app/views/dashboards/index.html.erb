@@ -1,6 +1,9 @@
 <div>
   <% if current_user.admin == true %>
-    <h1>User Admin Status</h1>
+    <div class="admindash">
+      <h1>Admin Dashboard</h1>
+    </div>
+    <h2>User Admin Status</h2>
   <%= form_with url: dashboard_path, method: :patch do |form| %>
     <% @users.each do |user| %>
       <%= form.fields_for :users, user, index: user.id do |f| %>
