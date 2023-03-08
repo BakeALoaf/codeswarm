@@ -1,0 +1,9 @@
+<div>
+  <% @users.each do |user| %>
+    <% if user.role == "Freelancer" %>
+      <h1>Freelancers</h1>
+      <p>Email: <%= user.email%>
+      Role: <%= user.role%></p>
+    <%end%>
+  <% end %>
+</div>
