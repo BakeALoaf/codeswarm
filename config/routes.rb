@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   # resources :dashboards, only: [:index, :update]
 
   patch "/dashboards", to: "dashboards#update", as: "dashboard"
-  get "/dashboard", to: "dashboards#index"
+  get "/dashboards", to: "dashboards#index"
 end
