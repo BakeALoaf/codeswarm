@@ -4,16 +4,10 @@ class DashboardsController < ApplicationController
   end
 
   def update
-      user_params.each do |id, user_params|
+    params[:users].each do |id, user_params|
       user = User.find(id)
-      user.update(user_params)
+      user.update(user_params.permit(:admin))
     end
     redirect_to dashboard_path, notice: "Admin status updated."
-  end
-
-  private
-
-  def user_params
-    params.require(:user).permit!.to_h.transform_values { |v| { admin: v } }
   end
 end
