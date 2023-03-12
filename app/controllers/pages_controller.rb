@@ -3,4 +3,10 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def update
+    raise
+    current_user.update(:setup, true)
+    redirect_to dashboard_path
+  end
 end
