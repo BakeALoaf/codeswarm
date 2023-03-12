@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :freelanceresults, only: [:index]
+  resources :freelancespecs
   # resources :dashboards, only: [:index, :update]
 
   patch "/dashboards", to: "dashboards#update", as: "dashboard"
