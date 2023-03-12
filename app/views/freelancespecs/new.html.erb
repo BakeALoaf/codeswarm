@@ -1,0 +1,32 @@
+<h1>New Freelancespec</h1>
+
+<%= form_with model: @freelancespec, url: freelancespecs_path do |form| %>
+  <div>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :skill %>
+    <%= form.text_field :skill %>
+  </div>
+
+  <div>
+    <%= form.label :portfolio %>
+    <%= form.text_field :portfolio %>
+  </div>
+
+  <div>
+    <%= form.label :pricing %>
+    <%= form.text_field :pricing %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
