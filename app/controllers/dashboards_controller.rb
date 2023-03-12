@@ -4,7 +4,7 @@ class DashboardsController < ApplicationController
   end
 
   def update
-    params[:users].each do |id, user_params|
+      params[:users].each do |id, user_params|
       user = User.find(id)
       user.update(user_params.permit(:admin))
     end
