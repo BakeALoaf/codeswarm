@@ -3,6 +3,7 @@
     <h1>Logged in make a choice</h1>
       <%= form_tag page_path(current_user), method: :patch do %>
         <%= hidden_field :user, :setup, value: true %>
+        <%= hidden_field :user, :role, value: "Client" %>
         <%= submit_tag "Client" %>
       <% end %>
         <%= link_to 'Freelancer', new_freelancespec_path %>

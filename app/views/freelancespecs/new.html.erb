@@ -2,6 +2,7 @@
 
 <%= form_with model: @freelancespec, url: freelancespecs_path do |form| %>
   <%= form.hidden_field :setup, value: true %>
+  <%= form.hidden_field :role, value: "Freelancer" %>
   <div>
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>

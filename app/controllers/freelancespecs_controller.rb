@@ -11,6 +11,7 @@ class FreelancespecsController < ApplicationController
     @freelancespec = Freelancespec.new(freelancespec_params)
     if @freelancespec.save
       current_user.update(setup: true)
+      current_user.update(role: "Freelancer")
       redirect_to dashboards_path, notice: 'Freelance profile was successfully created.'
     else
       render :new
