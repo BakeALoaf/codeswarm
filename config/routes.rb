@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :pages, only: [:update], param: :id
   resources :freelanceresults, only: [:index]
+  resources :freelancespecs
   resources :dashboards, only: [:index, :update]
 
 end
