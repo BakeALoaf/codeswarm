@@ -8,7 +8,7 @@ class FreelancespecsController < ApplicationController
   end
 
   def create
-    @freelancespec = Freelancespec.new(freelancespec_params)
+    @freelancespec = current_user.build_freelancespec(freelancespec_params)
     if @freelancespec.save
       current_user.update(setup: true)
       current_user.update(role: "Freelancer")
