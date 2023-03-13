@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     if current_user[:setup] == false
       root_path
     else
-      dashboard_path
+      dashboards_path
     end
   end
 end
