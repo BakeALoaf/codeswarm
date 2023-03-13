@@ -1,7 +1,10 @@
 <div class="homepage">
   <% if current_user %>
     <h1>Logged in make a choice</h1>
-      <%= link_to "Client", page_path(current_user), method: :patch, params: { user: { setup: true } } %>
+      <%= form_tag page_path(current_user), method: :patch do %>
+        <%= hidden_field :user, :setup, value: true %>
+        <%= submit_tag "Client" %>
+      <% end %>
     <a href="">Freelancer</a>
   <% else %>
     <img src="https://www.pngall.com/wp-content/uploads/2018/04/Under-Construction-Free-PNG-Image.png" alt="">
