@@ -9,7 +9,7 @@
       <%= form.fields_for :users, user, index: user.id do |f| %>
         <div>
           <%= f.check_box :admin, { checked: user.admin }, "true", "false" %>
-          <%= user.email %>
+          <%= user.email %> / <%= user.role %>
         </div>
       <% end %>
     <% end %>
