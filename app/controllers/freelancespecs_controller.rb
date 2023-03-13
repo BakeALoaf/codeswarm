@@ -29,7 +29,7 @@ class FreelancespecsController < ApplicationController
   def update
     @freelancespec = Freelancespec.find(params[:id])
     if @freelancespec.update(freelancespec_params)
-      redirect_to @freelancespec, notice: 'Freelance spec was successfully updated.'
+      redirect_to @freelancespec, notice: 'Freelance profile was successfully updated.'
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class FreelancespecsController < ApplicationController
   def destroy
     @freelancespec = Freelancespec.find(params[:id])
     @freelancespec.destroy
-    redirect_to freelancespecs_url, notice: 'Freelance spec was successfully destroyed.'
+    redirect_to freelancespecs_url, notice: 'Freelance profile was successfully destroyed.'
   end
 
   private
@@ -46,5 +46,4 @@ class FreelancespecsController < ApplicationController
   def freelancespec_params
     params.require(:freelancespec).permit(:first_name, :last_name, :skill, :portfolio, :pricing)
   end
-
 end
