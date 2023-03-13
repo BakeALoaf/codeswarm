@@ -10,7 +10,8 @@ class FreelancespecsController < ApplicationController
   def create
     @freelancespec = Freelancespec.new(freelancespec_params)
     if @freelancespec.save
-      redirect_to @freelancespec, notice: 'Freelance spec was successfully created.'
+      current_user.update(setup: true)
+      redirect_to dashboards_path, notice: 'Freelance profile was successfully created.'
     else
       render :new
     end
@@ -44,4 +45,5 @@ class FreelancespecsController < ApplicationController
   def freelancespec_params
     params.require(:freelancespec).permit(:first_name, :last_name, :skill, :portfolio, :pricing)
   end
+
 end

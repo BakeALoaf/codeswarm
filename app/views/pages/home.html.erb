@@ -5,7 +5,7 @@
         <%= hidden_field :user, :setup, value: true %>
         <%= submit_tag "Client" %>
       <% end %>
-    <a href="">Freelancer</a>
+        <%= link_to 'Freelancer', new_freelancespec_path %>
   <% else %>
     <img src="https://www.pngall.com/wp-content/uploads/2018/04/Under-Construction-Free-PNG-Image.png" alt="">
   <% end %>

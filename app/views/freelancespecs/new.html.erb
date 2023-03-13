@@ -1,6 +1,7 @@
 <h1>New Freelancespec</h1>
 
 <%= form_with model: @freelancespec, url: freelancespecs_path do |form| %>
+  <%= form.hidden_field :setup, value: true %>
   <div>
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
