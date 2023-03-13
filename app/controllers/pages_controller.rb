@@ -5,8 +5,14 @@ class PagesController < ApplicationController
   end
 
   def update
-    raise
-    current_user.update(:setup, true)
+    current_user.update(user_params)
     redirect_to dashboard_path
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:setup)
+  end
+
 end
