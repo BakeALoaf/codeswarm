@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def update
     current_user.update(user_params)
-    redirect_to dashboard_path
+    redirect_to dashboards_path
   end
 
   private
