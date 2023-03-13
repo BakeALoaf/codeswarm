@@ -15,8 +15,18 @@
             <%= link_to "Dashboard", dashboards_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Search_Freelancers", freelanceresults_path, class: "nav-link" %>
+              <% if current_user && current_user.role == 'Client' %>
+                <%= link_to 'Search_freelancers', freelanceresults_path, class: "nav-link" %>
+              <% end %>
           </li>
+          <li class="nav-item">
+            <% if current_user && current_user.role == 'Client' %>
+              <%= link_to "New_Project", projects_new_path, class: "nav-link" %>
+            <% else %>
+              <%= link_to "current_Project", dashboards_path, class: "nav-link" %>
+              <% end %>
+          </li>
+
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
