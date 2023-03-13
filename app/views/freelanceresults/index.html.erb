@@ -1,10 +1,10 @@
 <div>
     <h1>List of freelancers</h1>
-  <% @users.each do |user| %>
-    <% if user.role == "Freelancer" %>
-      <h1>Freelancers</h1>
-      <p>Email: <%= user.email%>
-      Role: <%= user.role%></p>
+  <% @freelancers.each do |freelance| %>
+      <p>First Name: <%= freelance.first_name%>
+      Last Name: <%= freelance.last_name%>
+      skill: <%= freelance.skill%>
+      Portfolio: <%= freelance.portfolio%>
+      Hourly price: <%= freelance.pricing%>€</p>
     <%end%>
-  <% end %>
 </div>

@@ -1,11 +1,10 @@
 class FreelanceresultsController < ApplicationController
 
   def new
-    @user = User.all
+    @freelancer = Freelancespec.all
   end
 
   def index
-    @users = User.all
+    @freelancers = Freelancespec.all
   end
-
 end
