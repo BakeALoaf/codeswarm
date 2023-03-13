@@ -1,10 +1,9 @@
 <div>
     <h1>List of freelancers</h1>
   <% @freelancers.each do |freelance| %>
-      <p>First Name: <%= freelance.first_name%>
-      Last Name: <%= freelance.last_name%>
-      skill: <%= freelance.skill%>
-      Portfolio: <%= freelance.portfolio%>
+      <p>Name: <%= freelance.first_name%> <%= freelance.last_name%>
+      skill Tags: <%= freelance.skill%>
+      Portfolio: <a href="http://<%= freelance.portfolio %>"><%= freelance.portfolio %></a>
       Hourly price: <%= freelance.pricing%>€</p>
     <%end%>
 </div>
