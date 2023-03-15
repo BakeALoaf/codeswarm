@@ -78,3 +78,4 @@ group :test do
 end
 
 gem 'faker'
+gem 'acts-as-taggable-on', '~> 9.0'
