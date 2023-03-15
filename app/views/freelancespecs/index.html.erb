@@ -1,0 +1,6 @@
+<% @rfreelancespecs.each do |f| %>
+  <h2><%= f.first_name %></h2>
+  <p><% f.tag_list.each do |tag| %>
+    <%= link_to tag, tagged_path(tag: tag) %>
+  <% end %></p>
+<% end %>

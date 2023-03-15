@@ -41,6 +41,13 @@ class FreelancespecsController < ApplicationController
     redirect_to freelancespecs_url, notice: 'Freelance profile was successfully destroyed.'
   end
 
+  def tagged
+    if params[:tag].present?
+      @freelancespecs = Freelancespec.tagged_with(params[:tag])
+    else
+      @freelancespecs = Freelancespec.all
+    end
+  end
   private
 
   def freelancespec_params
