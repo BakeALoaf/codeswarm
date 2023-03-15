@@ -1,11 +1,44 @@
 <div class = "freelancebody">
-    <h1>List of freelancers</h1>
-  <% @freelancers.each do |freelance| %>
-      <div class = "freelancecard">
-        <p>Name: <%= freelance.first_name%> <%= freelance.last_name%>
-        skill Tags: <%= freelance.skill%>
-        Portfolio: <a href="http://<%= freelance.portfolio %>"><%= freelance.portfolio %></a>
-        Hourly price: <%= freelance.pricing%>€</p>
-      </div>
-  <%end%>
+  <div class = "projectform">
+    <% if @projects.exists? %>
+      <h1>Your Project</h1>
+        <% @projects.each do |project| %>
+            <p>Title: <%= project.title%></p>
+            <p>Description: <%= project.description%></p>
+        <%end%>
+    <%else%>
+      <h1>New Project</h1>
+      <%= form_for @project do |f| %>
+        <div class="field">
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </div>
+
+        <div class="field">
+          <%= f.label :description %>
+          <%= f.text_area :description %>
+        </div>
+
+        <div class="field">
+          <%= f.label :tags %>
+          <%= f.text_field :tags %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
+    <%end%>
+  </div>
+  <div class = "list">
+      <h1>List of freelancers</h1>
+    <% @freelancers.each do |freelance| %>
+        <div class = "freelancecard">
+          <p>Name: <%= freelance.first_name%> <%= freelance.last_name%>
+          skill Tags: <%= freelance.skill%>
+          Portfolio: <a href="http://<%= freelance.portfolio %>"><%= freelance.portfolio %></a>
+          <div class = "hide">Hourly price: <%= freelance.pricing%>€</div></p>
+        </div>
+    <%end%>
+  </div>
 </div>
