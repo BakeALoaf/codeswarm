@@ -5,11 +5,7 @@ class FreelanceresultsController < ApplicationController
   end
 
   def index
-    if params[:tags].present?
-      @freelancers = Freelancespec.tagged_with(params[:tags]).by_skill_in_project(params[:tags])
-    else
-      @freelancers = Freelancespec.all
-    end
+    @freelancers = Freelancespec.all
   end
   private
 

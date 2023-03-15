@@ -1,8 +1,4 @@
 class FreelancespecsController < ApplicationController
-  def index
-    @freelancespecs = Freelancespec.all
-  end
-
   def new
     @freelancespec = Freelancespec.new
   end
@@ -16,10 +12,6 @@ class FreelancespecsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @freelancespec = Freelancespec.find(params[:id])
   end
 
   def edit
@@ -41,13 +33,6 @@ class FreelancespecsController < ApplicationController
     redirect_to freelancespecs_url, notice: 'Freelance profile was successfully destroyed.'
   end
 
-  def tagged
-    if params[:tag].present?
-      @freelancespecs = Freelancespec.tagged_with(params[:tag])
-    else
-      @freelancespecs = Freelancespec.all
-    end
-  end
   private
 
   def freelancespec_params
