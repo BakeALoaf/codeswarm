@@ -4,9 +4,6 @@
       <div class = "freelancecard">
         <p>Name: <%= freelance.first_name%> <%= freelance.last_name%>
         skill Tags: <%= freelance.skill%>
-        <% freelance.tag_list.each do |tag| %>
-          <%= link_to tag, tagged_path(tags: tag) %>
-        <%end%>
         Portfolio: <a href="http://<%= freelance.portfolio %>"><%= freelance.portfolio %></a>
         Hourly price: <%= freelance.pricing%>€</p>
       </div>

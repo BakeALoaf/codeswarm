@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  get '/tagged', to: "freelancespecs#tagged", as: :tagged
-
   resources :pages, only: [:update], param: :id
   resources :freelanceresults, only: [:index]
   resources :freelancespecs
