@@ -1,15 +1,33 @@
-.freelancebody {
+.projectform {
+  position: fixed;
+  height: 100vh;
+  width: 45vw;
+  padding: 70px 0;
   text-align: center;
+}
+
+.list {
+  height: 100vh;
+  width: 50vw;
+  float: right;
 }
 
 .freelancecard {
   border: 1px solid;
-  display: flex;
-  display: inline-block;
   justify-content: center;
   align-items: center;
   margin-bottom: 5px;
-  width: 70vw;
+  padding-left: 5px;
+  width: 50vw;
   background-color: white;
   border-radius: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.freelancecard:hover > .hide {
+  height: 150px;
+  display: block;
 }

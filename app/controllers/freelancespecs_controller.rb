@@ -18,6 +18,10 @@ class FreelancespecsController < ApplicationController
     @freelancespec = Freelancespec.find(params[:id])
   end
 
+  def show
+    @freelancespec = Freelancespec.find(params[:id])
+  end
+
   def update
     @freelancespec = Freelancespec.find(params[:id])
     if @freelancespec.update(freelancespec_params)
@@ -36,6 +40,6 @@ class FreelancespecsController < ApplicationController
   private
 
   def freelancespec_params
-    params.require(:freelancespec).permit(:first_name, :last_name, :skill, :portfolio, :pricing)
+    params.require(:freelancespec).permit(:first_name, :last_name, :skill, :portfolio, :pricing, :user_id)
   end
 end

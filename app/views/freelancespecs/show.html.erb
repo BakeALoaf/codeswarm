@@ -1,0 +1,12 @@
+<h1><%= @freelancespec.first_name %> <%= @freelancespec.last_name %> Profile</h1>
+
+<p><strong>Name:</strong> <%= @freelancespec.first_name %> <%= @freelancespec.last_name %></p>
+
+<p><strong>Skill:</strong> <%= @freelancespec.skill %></p>
+
+<p><strong>Portfolio:</strong> <%= @freelancespec.portfolio %></p>
+
+<p><strong>Pricing:</strong> <%= @freelancespec.pricing %></p>
+
+<%= link_to "Edit Profile", edit_freelancespec_path(@freelancespec) %>
+<%= link_to "Delete Profile", freelancespec_path(@freelancespec), method: :delete, data: { confirm: "Are you sure?" } %>

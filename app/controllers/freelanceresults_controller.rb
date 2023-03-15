@@ -5,7 +5,9 @@ class FreelanceresultsController < ApplicationController
   end
 
   def index
+    @projects = Project.all
     @freelancers = Freelancespec.all
+    @project = Project.new
   end
   private
 
