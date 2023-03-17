@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :freelancespecs, only: [:new, :create, :edit, :update, :destroy]
   resources :dashboards, only: [:index, :update]
   resources :projects, only: [:new, :create]
+  resources :requests, only: [:create, :update, :index, :new]
 
 end
