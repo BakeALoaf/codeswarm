@@ -34,13 +34,28 @@
   </div>
   <div class = "list">
     <h1>List of freelancers</h1>
-    <% @freelancers.each do |freelance| %>
+    <% if @projects.exists? %>
+      <% @projects.each do |project| %>
+        <% @freelancers.each do |freelance| %>
+            <% if project.tags.include?(freelance.skill) %>
+              <div class = "freelancecard" data-id="<%= freelance.id %>">
+              <p>Name: <%= freelance.first_name%> <%= freelance.last_name%>
+              skill Tags: <%= freelance.skill%>
+              Portfolio: <a href="http://<%= freelance.portfolio %>"><%= freelance.portfolio %></a>
+              <div class = "hide">Hourly price: <%= freelance.pricing%>€</div></p>
+            </div>
+            <%end%>
+          <%end%>
+      <%end%>
+    <%else%>
+      <% @freelancers.each do |freelance| %>
         <div class = "freelancecard" data-id="<%= freelance.id %>">
-          <p>Name: <%= freelance.first_name%> <%= freelance.last_name%>
-          skill Tags: <%= freelance.skill%>
-          Portfolio: <a href="http://<%= freelance.portfolio %>"><%= freelance.portfolio %></a>
-          <div class = "hide">Hourly price: <%= freelance.pricing%>€</div></p>
-        </div>
+        <p>Name: <%= freelance.first_name%> <%= freelance.last_name%>
+        skill Tags: <%= freelance.skill%>
+        Portfolio: <a href="http://<%= freelance.portfolio %>"><%= freelance.portfolio %></a>
+        <div class = "hide">Hourly price: <%= freelance.pricing%>€</div></p>
+      </div>
+      <%end%>
     <%end%>
   </div>
 </div>
