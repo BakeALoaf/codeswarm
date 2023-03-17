@@ -8,5 +8,7 @@
 
 <p><strong>Pricing:</strong> <%= @freelancespec.pricing %></p>
 
-<%= link_to "Edit Profile", edit_freelancespec_path(@freelancespec) %>
-<%= link_to "Delete Profile", freelancespec_path(@freelancespec), method: :delete, data: { confirm: "Are you sure?" } %>
+<% if current_user == @freelancespec.user %>
+  <%= link_to "Edit Profile", edit_freelancespec_path(@freelancespec) %>
+  <%= link_to "Delete Profile", freelancespec_path(@freelancespec), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
