@@ -31,9 +31,9 @@
     <%end%>
   </div>
   <div class = "list">
-      <h1>List of freelancers</h1>
+    <h1>List of freelancers</h1>
     <% @freelancers.each do |freelance| %>
-        <div class = "freelancecard">
+        <div class = "freelancecard" data-id="<%= freelance.id %>">
           <p>Name: <%= freelance.first_name%> <%= freelance.last_name%>
           skill Tags: <%= freelance.skill%>
           Portfolio: <a href="http://<%= freelance.portfolio %>"><%= freelance.portfolio %></a>
@@ -42,3 +42,15 @@
     <%end%>
   </div>
 </div>
+
+<script>
+  var clickableDivs = document.querySelectorAll(".freelancecard");
+  for (var i = 0; i < clickableDivs.length; i++) {
+    clickableDivs[i].addEventListener("click", function() {
+      // Handle click event here
+      var freelancespecId = this.getAttribute("data-id");
+      var url = "<%= freelanceresults_path %>" + "/" + freelancespecId;
+      window.location = url;
+    });
+  }
+</script>

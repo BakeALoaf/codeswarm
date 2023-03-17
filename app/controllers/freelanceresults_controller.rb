@@ -4,6 +4,10 @@ class FreelanceresultsController < ApplicationController
     @freelancer = Freelancespec.all
   end
 
+  def show
+    @freelancer = Freelancespec.find(params[:id])
+  end
+
   def index
     @projects = Project.all
     @freelancers = Freelancespec.all
