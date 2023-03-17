@@ -1,0 +1,24 @@
+<h1>Pending Requests</h1>
+<% if @requests.exists? %>
+  <ul>
+    <% @requests.each do |request| %>
+      <li>
+        <%= request.message %>
+        <% if request.pending? %>
+          <%= form_for request, url: request_path(request), method: :patch do |f| %>
+            <%= f.hidden_field :status, value: :accepted %>
+            <%= f.submit "Accept" %>
+          <% end %>
+          <%= form_for request, url: request_path(request), method: :patch do |f| %>
+            <%= f.hidden_field :status, value: :rejected %>
+            <%= f.submit "Reject" %>
+          <% end %>
+        <% else %>
+          <%= request.status %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No pending requests</p>
+<% end %>

@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   has_many :projects, dependent: :destroy
 
-  has_many :received_requests, foreign_key: "receiver_id", class_name: "Request"
-  has_many :sent_requests, foreign_key: "sender_id", class_name: "Request"
+  has_many :requests, dependent: :destroy
+  has_many :received_requests, class_name: "Request", foreign_key: "user_id", dependent: :destroy
+  has_many :requestors, through: :received_requests, source: :requestor
 
 end

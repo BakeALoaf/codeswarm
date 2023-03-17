@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_17_144254) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_17_214428) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,13 +37,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_144254) do
   end
 
   create_table "requests", force: :cascade do |t|
+    t.text "message"
     t.bigint "sender_id", null: false
-    t.bigint "receiver_id", null: false
-    t.string "status", default: "pending", null: false
+    t.bigint "recipient_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["receiver_id"], name: "index_requests_on_receiver_id"
+    t.integer "status", default: 0
+    t.index ["recipient_id"], name: "index_requests_on_recipient_id"
+    t.index ["recipient_id"], name: "index_requests_on_recipient_id_unique", unique: true
     t.index ["sender_id"], name: "index_requests_on_sender_id"
+    t.index ["sender_id"], name: "index_requests_on_sender_id_unique", unique: true
+    t.index ["status"], name: "index_requests_on_status"
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,6 +68,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_144254) do
 
   add_foreign_key "freelancespecs", "users"
   add_foreign_key "projects", "users"
-  add_foreign_key "requests", "users", column: "receiver_id"
+  add_foreign_key "requests", "users", column: "recipient_id"
   add_foreign_key "requests", "users", column: "sender_id"
 end
