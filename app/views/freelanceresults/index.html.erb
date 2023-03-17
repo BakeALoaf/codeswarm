@@ -1,8 +1,8 @@
 <div class = "freelancebody">
   <div class = "projectform">
-    <% if @projects.exists? %>
+    <% if @projects.exists?(user_id: current_user) %>
       <h1>Your Project</h1>
-        <% @projects.each do |project| %>
+        <% @projects.where(user_id: current_user.id).each do |project| %>
             <p>Title: <%= project.title%></p>
             <p>Description: <%= project.description%></p>
         <%end%>
@@ -34,8 +34,8 @@
   </div>
   <div class = "list">
     <h1>Freelancers</h1>
-    <% if @projects.exists? %>
-      <% @projects.each do |project| %>
+    <% if @projects.exists?(user_id: current_user) %>
+      <% @projects.where(user_id: current_user.id).each do |project| %>
         <% @freelancers.each do |freelance| %>
             <% if project.tags.include?(freelance.skill) %>
               <div class = "freelancecard" data-id="<%= freelance.id %>">
