@@ -47,7 +47,6 @@
   var clickableDivs = document.querySelectorAll(".freelancecard");
   for (var i = 0; i < clickableDivs.length; i++) {
     clickableDivs[i].addEventListener("click", function() {
-      // Handle click event here
       var freelancespecId = this.getAttribute("data-id");
       var url = "<%= freelanceresults_path %>" + "/" + freelancespecId;
       window.location = url;
