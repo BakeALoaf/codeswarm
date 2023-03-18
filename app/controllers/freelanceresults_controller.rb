@@ -6,6 +6,7 @@ class FreelanceresultsController < ApplicationController
 
   def show
     @freelancer = Freelancespec.find(params[:id])
+    @project = Project.where(user_id: current_user)
     @request = Request.new
   end
 

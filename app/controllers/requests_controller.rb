@@ -28,6 +28,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:message, :recipient_id, :sender_id, :status)
+    params.require(:request).permit(:title, :description, :recipient_id, :sender_id, :status)
   end
 end
