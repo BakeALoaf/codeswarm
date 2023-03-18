@@ -10,3 +10,5 @@
 
 <%= link_to "Edit Profile", edit_freelancespec_path(@freelancer) %>
 <%= link_to "Delete Profile", freelancespec_path(@freelancer), method: :delete, data: { confirm: "Are you sure?" } %>
+
+<%= render partial: 'requests/form', locals: { request: @request } %>
