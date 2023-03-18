@@ -6,6 +6,7 @@ class FreelanceresultsController < ApplicationController
 
   def show
     @freelancer = Freelancespec.find(params[:id])
+    @request = Request.new
   end
 
   def index
@@ -13,6 +14,7 @@ class FreelanceresultsController < ApplicationController
     @freelancers = Freelancespec.all
     @project = Project.new
   end
+
   private
 
   def freelancespec_params

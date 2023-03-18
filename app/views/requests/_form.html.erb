@@ -1,0 +1,8 @@
+<h1>New Request</h1>
+<%= form_for @request, url: requests_path do |f| %>
+  <%= f.label :recipient_id %>
+  <%= f.number_field :recipient_id %>
+  <%= f.label :message %>
+  <%= f.text_area :message %>
+  <%= f.submit "Send Request" %>
+<% end %>
