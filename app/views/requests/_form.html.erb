@@ -1,8 +1,6 @@
-<h1>New Request</h1>
 <%= form_for @request, url: requests_path do |f| %>
-  <%= f.label :recipient_id %>
-  <%= f.number_field :recipient_id %>
-  <%= f.label :message %>
-  <%= f.text_area :message %>
-  <%= f.submit "Send Request" %>
+  <%= f.hidden_field :recipient_id, value: freelancer.user_id %>
+  <%= f.hidden_field :title, value: @project.first.title %>
+  <%= f.hidden_field :description, value: @project.first.description %>
+  <%= f.submit "Request Consultation" %>
 <% end %>

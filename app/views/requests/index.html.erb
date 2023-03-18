@@ -3,7 +3,8 @@
   <ul>
     <% @requests.each do |request| %>
       <li>
-        <%= request.message %>
+        <%= request.title %>
+        <%= request.description %>
         <% if request.pending? %>
           <%= form_for request, url: request_path(request), method: :patch do |f| %>
             <%= f.hidden_field :status, value: :accepted %>
