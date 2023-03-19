@@ -15,7 +15,64 @@
     <% end %>
     <%= form.submit "Update Admin Status" %>
   <% end %>
-  <% else %>
+  <% elsif current_user.role == "Client" %>
     <h1>Dashboard</h1>
+    <% if @requests.exists? %>
+      <% pending = 0 %>
+      <% @requests.each do |request| %>
+      <% if request.status == "pending" %>
+        <% pending += 1 %>
+      <% end %>
+    <% end %>
+    <h3> Awaiting Response: <%= content_tag :strong, pending %></h3>
+    <% else %>
+      <h3>Awaiting Response: <%= content_tag :strong, 0 %></h3>
+    <% end %>
+    <% if @requests.exists? %>
+      <% accept = 0 %>
+      <% @requests.each do |request| %>
+    <% if request.status == "accepted" %>
+        <% accept += 1 %>
+      <% end %>
+    <% end %>
+    <h3>Request Accepted: <%= content_tag :strong, accept %></h3>
+    <% else %>
+      <h3>Request Accepted: <%= content_tag :strong, 0 %></h3>
+    <% end %>
+    <% if @requests.exists? %>
+      <% rejected = 0 %>
+      <% @requests.each do |request| %>
+    <% if request.status == "rejected" %>
+        <% rejected += 1 %>
+      <% end %>
+    <% end %>
+    <h3>Request Rejected: <%= content_tag :strong, rejected %></h3>
+    <% else %>
+      <h3>Request Rejected: <%= content_tag :strong, 0 %></h3>
+    <% end %>
+    <% elsif current_user.role == "Freelancer" %>
+    <h1>Dashboard</h1>
+    <% if @requests.exists? %>
+      <% pending = 0 %>
+      <% @requests.each do |request| %>
+      <% if request.status == "pending" %>
+        <% pending += 1 %>
+      <% end %>
+    <% end %>
+    <h3> New Requests: <%= content_tag :strong, pending %></h3>
+    <% else %>
+      <h3>New Requests: <%= content_tag :strong, 0 %></h3>
+    <% end %>
+    <% if @requests.exists? %>
+      <% accept = 0 %>
+      <% @requests.each do |request| %>
+    <% if request.status == "accepted" %>
+        <% accept += 1 %>
+      <% end %>
+    <% end %>
+    <h3>Live Projects: <%= content_tag :strong, accept %></h3>
+    <% else %>
+      <h3>Live Projects: <%= content_tag :strong, 0 %></h3>
+    <% end %>
   <% end %>
 </div>
