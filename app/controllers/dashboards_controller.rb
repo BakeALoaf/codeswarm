@@ -1,7 +1,8 @@
 class DashboardsController < ApplicationController
   def index
     @users = User.all
-    @requests = Request.where(recipient_id: current_user )
+    @requests = Request.where(recipient_id: current_user)
+    @requestsender = Request.where(sender_id: current_user)
   end
 
   def update

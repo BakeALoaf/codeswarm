@@ -17,10 +17,10 @@
   <% end %>
   <% elsif current_user.role == "Client" %>
     <h1>Dashboard</h1>
-    <% if @requests.exists? %>
+    <% if @requestsender.exists? %>
       <% pending = 0 %>
-      <% @requests.each do |request| %>
-      <% if request.status == "pending" %>
+      <% @requestsender.each do |requestsender| %>
+      <% if requestsender.status == "pending"%>
         <% pending += 1 %>
       <% end %>
     <% end %>
@@ -28,10 +28,10 @@
     <% else %>
       <h3>Awaiting Response: <%= content_tag :strong, 0 %></h3>
     <% end %>
-    <% if @requests.exists? %>
+    <% if @requestsender.exists? %>
       <% accept = 0 %>
-      <% @requests.each do |request| %>
-    <% if request.status == "accepted" %>
+      <% @requestsender.each do |requestsender| %>
+    <% if requestsender.status == "accepted" %>
         <% accept += 1 %>
       <% end %>
     <% end %>
@@ -39,10 +39,10 @@
     <% else %>
       <h3>Request Accepted: <%= content_tag :strong, 0 %></h3>
     <% end %>
-    <% if @requests.exists? %>
+    <% if @requestsender.exists? %>
       <% rejected = 0 %>
-      <% @requests.each do |request| %>
-    <% if request.status == "rejected" %>
+      <% @requestsender.each do |requestsender| %>
+    <% if requestsender.status == "rejected" %>
         <% rejected += 1 %>
       <% end %>
     <% end %>
