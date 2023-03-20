@@ -59,7 +59,7 @@
         <% pending += 1 %>
       <% end %>
     <% end %>
-    <h3> New Requests: <%= content_tag :strong, pending %></h3>
+    <h3><%= link_to "New Requests: #{content_tag :strong, pending}".html_safe, requests_path %></h3>
     <% else %>
       <h3>New Requests: <%= content_tag :strong, 0 %></h3>
     <% end %>

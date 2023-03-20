@@ -18,6 +18,10 @@ class FreelancespecsController < ApplicationController
     @freelancespec = Freelancespec.find(params[:id])
   end
 
+  def index
+    @freelancers = Freelancespec.all
+  end
+
   def show
     @freelancespec = Freelancespec.find(params[:id])
   end
