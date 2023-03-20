@@ -44,6 +44,6 @@ class FreelancespecsController < ApplicationController
   private
 
   def freelancespec_params
-    params.require(:freelancespec).permit(:first_name, :last_name, :skill, :portfolio, :pricing, :user_id)
+    params.require(:freelancespec).permit(:first_name, :last_name, {skill: []}, :portfolio, :pricing, :user_id)
   end
 end

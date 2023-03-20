@@ -23,7 +23,7 @@ LANGUAGES = [
 20.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
-  skill = LANGUAGES.sample
+  skill = LANGUAGES.sample(3)
   portfolio = Faker::Internet.url
   pricing = rand(10..100)
   user_id = 1

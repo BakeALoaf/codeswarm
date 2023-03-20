@@ -14,8 +14,10 @@
   </div>
 
   <div>
-    <%= form.label :skill %>
-    <%= form.text_field :skill %>
+    <%= form.label :Ruby_on_Rails %>
+    <%= form.check_box :skill, { multiple: true }, "Ruby on Rails", nil %>
+    <%= form.label :Python %>
+    <%= form.check_box :skill, { multiple: true }, "Python", nil %>
   </div>
 
   <div>
