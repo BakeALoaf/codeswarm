@@ -80,17 +80,17 @@
     <h1>Freelancers</h1>
     <% if @projects.exists?(user_id: current_user) %>
       <% @projects.where(user_id: current_user.id).each do |project| %>
-        <% @freelancers.each do |freelance| %>
-            <% if project.tags.include?(freelance.skill) %>
-              <div class = "freelancecard" data-id="<%= freelance.id %>">
-              <p>Name: <%= freelance.first_name%> <%= freelance.last_name%>
-              skill Tags: <%= freelance.skill%>
-              Portfolio: <a href="http://<%= freelance.portfolio %>"><%= freelance.portfolio %></a>
-              <div class = "hide">Hourly price: <%= freelance.pricing%>€</div></p>
-            </div>
-            <%end%>
-          <%end%>
-      <%end%>
+        <% freelancers_with_tags = @freelancers.select { |freelance| (project.tags & freelance.skill).present? } %>
+        <% freelancers_with_tags = freelancers_with_tags.sort_by { |freelance| -(project.tags & freelance.skill).size } %>
+        <% freelancers_with_tags.each do |freelance| %>
+          <div class="freelancecard" data-id="<%= freelance.id %>">
+            <p>Name: <%= freelance.first_name %> <%= freelance.last_name %>
+            skill Tags: <%= freelance.skill %>
+            Portfolio: <a href="http://<%= freelance.portfolio %>"><%= freelance.portfolio %></a>
+            <div class="hide">Hourly price: <%= freelance.pricing %>€</div></p>
+          </div>
+        <% end %>
+      <% end %>
     <%else%>
       <% @freelancers.each do |freelance| %>
         <div class = "freelancecard" data-id="<%= freelance.id %>">
