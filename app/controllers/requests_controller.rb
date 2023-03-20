@@ -6,9 +6,9 @@ class RequestsController < ApplicationController
     @request.sender_id = current_user.id
     @request.status = :pending
     if @request.save
-      redirect_to requests_path, notice: "Request sent successfully"
+      redirect_to freelanceresults_path, notice: "Request sent successfully"
     else
-      redirect_to requests_path, alert: "Failed to send request"
+      redirect_to freelanceresults_path, alert: "Failed to send request"
     end
   end
 

@@ -5,7 +5,11 @@ class ApplicationController < ActionController::Base
     if current_user[:setup] == false
       root_path
     else
-      dashboards_path
+      if current_user[:role] == "Freelancer"
+        dashboards_path
+      else
+        freelancespecs_path
+      end
     end
   end
 end
