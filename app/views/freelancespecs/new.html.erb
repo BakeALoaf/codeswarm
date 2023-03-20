@@ -14,59 +14,12 @@
   </div>
 
   <div>
-    <%= form.label :Ruby_on_Rails %>
-    <%= form.check_box :skill, { multiple: true }, "Ruby on Rails", nil %>
-
-    <%= form.label :Python %>
-    <%= form.check_box :skill, { multiple: true }, "Python", nil %>
-
-    <%= form.label :Java %>
-    <%= form.check_box :skill, { multiple: true }, "Java", nil %>
-
-    <%= form.label :JavaScript %>
-    <%= form.check_box :skill, { multiple: true }, "JavaScript", nil %>
-
-    <%= form.label :'C#' %>
-    <%= form.check_box :skill, { multiple: true }, "C#", nil %>
-
-    <%= form.label :PHP %>
-    <%= form.check_box :skill, { multiple: true }, "PHP", nil %>
-
-    <%= form.label :'C++' %>
-    <%= form.check_box :skill, { multiple: true }, "C++", nil %>
-
-    <%= form.label :Ruby %>
-    <%= form.check_box :skill, { multiple: true }, "Ruby", nil %>
-
-    <%= form.label :Swift %>
-    <%= form.check_box :skill, { multiple: true }, "Swift", nil %>
-
-    <%= form.label :'Objective-C' %>
-    <%= form.check_box :skill, { multiple: true }, "Objective-C", nil %>
-
-    <%= form.label :Kotlin %>
-    <%= form.check_box :skill, { multiple: true }, "Kotlin", nil %>
-
-    <%= form.label :TypeScript %>
-    <%= form.check_box :skill, { multiple: true }, "TypeScript", nil %>
-
-    <%= form.label :Go %>
-    <%= form.check_box :skill, { multiple: true }, "Go", nil %>
-
-    <%= form.label :Rust %>
-    <%= form.check_box :skill, { multiple: true }, "Rust", nil %>
-
-    <%= form.label :SQL %>
-    <%= form.check_box :skill, { multiple: true }, "SQL", nil %>
-
-    <%= form.label :HTML %>
-    <%= form.check_box :skill, { multiple: true }, "HTML", nil %>
-
-    <%= form.label :CSS %>
-    <%= form.check_box :skill, { multiple: true }, "CSS", nil %>
-
-    <%= form.label :'Shell Scripting' %>
-    <%= form.check_box :skill, { multiple: true }, "Shell Scripting", nil %>
+    <% languages = ["Python", "Ruby", "Java", "JavaScript", "C#", "PHP", "C++", "Swift", "kotlin", "Typescript", "Go", "Rust", "SQL", "HTML",
+    "CSS", "ShellScripting", "Perl", "R", "MATLAB", "Lua", "Scala", "Dart", "Julia", "Haskell"] %>
+    <% languages.each do |lang| %>
+      <%= form.label lang %>
+      <%= form.check_box :skill, { multiple: true }, lang, nil %>
+    <% end %>
   </div>
 
   <div>

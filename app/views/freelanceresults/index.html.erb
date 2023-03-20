@@ -20,56 +20,13 @@
         </div>
 
         <div class="tagfield">
-          <%= label_tag "Python" %>
-          <%= check_box_tag "project[tags][]", "Python" %>
-          <%= label_tag "Ruby_on_Rails" %>
-          <%= check_box_tag "project[tags][]", "Ruby on Rails" %>
-          <%= label_tag "Java" %>
-          <%= check_box_tag "project[tags][]", "Java" %>
-          <%= label_tag "JavaScript" %>
-          <%= check_box_tag "project[tags][]", "JavaScript" %>
-          <%= label_tag "C#" %>
-          <%= check_box_tag "project[tags][]", "C#" %>
-          <%= label_tag "PHP" %>
-          <%= check_box_tag "project[tags][]", "PHP" %>
-          <%= label_tag "C++" %>
-          <%= check_box_tag "project[tags][]", "C++" %>
-          <%= label_tag "Swift" %>
-          <%= check_box_tag "project[tags][]", "Swift" %>
-          <%= label_tag "Kotlin" %>
-          <%= check_box_tag "project[tags][]", "Kotlin" %>
-          <%= label_tag "TypeScript" %>
-          <%= check_box_tag "project[tags][]", "TypeScript" %>
-          <%= label_tag "Go" %>
-          <%= check_box_tag "project[tags][]", "Go" %>
-          <%= label_tag "Rust" %>
-          <%= check_box_tag "project[tags][]", "Rust" %>
-          <%= label_tag "SQL" %>
-          <%= check_box_tag "project[tags][]", "SQL" %>
-          <%= label_tag "HTML" %>
-          <%= check_box_tag "project[tags][]", "HTML" %>
-          <%= label_tag "CSS" %>
-          <%= check_box_tag "project[tags][]", "CSS" %>
-          <%= label_tag "Shell_Scripting" %>
-          <%= check_box_tag "project[tags][]", "Shell Scripting" %>
-          <%= label_tag "Perl" %>
-          <%= check_box_tag "project[tags][]", "Perl" %>
-          <%= label_tag "R" %>
-          <%= check_box_tag "project[tags][]", "R" %>
-          <%= label_tag "MATLAB" %>
-          <%= check_box_tag "project[tags][]", "MATLAB" %>
-          <%= label_tag "Lua" %>
-          <%= check_box_tag "project[tags][]", "Lua" %>
-          <%= label_tag "Scala" %>
-          <%= check_box_tag "project[tags][]", "Scala" %>
-          <%= label_tag "Dart" %>
-          <%= check_box_tag "project[tags][]", "Dart" %>
-          <%= label_tag "Julia" %>
-          <%= check_box_tag "project[tags][]", "Julia" %>
-          <%= label_tag "Haskell" %>
-          <%= check_box_tag "project[tags][]", "Haskell" %>
+          <% languages = ["Python", "Ruby", "Java", "JavaScript", "C#", "PHP", "C++", "Swift", "kotlin", "Typescript", "Go", "Rust", "SQL", "HTML",
+          "CSS", "ShellScripting", "Perl", "R", "MATLAB", "Lua", "Scala", "Dart", "Julia", "Haskell"] %>
+          <% languages.each do |lang| %>
+            <%= label_tag lang %>
+            <%= check_box_tag "project[tags][]", lang %>
+          <% end %>
         </div>
-
         <div class="actions">
           <%= f.submit %>
         </div>
