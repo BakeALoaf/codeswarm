@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_18_204001) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_20_101628) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,9 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_18_204001) do
     t.integer "status", default: 0
     t.text "description"
     t.index ["recipient_id"], name: "index_requests_on_recipient_id"
-    t.index ["recipient_id"], name: "index_requests_on_recipient_id_unique", unique: true
     t.index ["sender_id"], name: "index_requests_on_sender_id"
-    t.index ["sender_id"], name: "index_requests_on_sender_id_unique", unique: true
     t.index ["status"], name: "index_requests_on_status"
   end
 
