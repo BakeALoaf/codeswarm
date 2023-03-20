@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :pages, only: [:update], param: :id
+  resources :pages, only: [:show]
   resources :freelanceresults, only: [:index, :show]
   resources :freelancespecs, only: [:new, :create, :edit, :index, :update, :destroy]
   resources :dashboards, only: [:index, :update]
