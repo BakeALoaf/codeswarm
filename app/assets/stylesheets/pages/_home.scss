@@ -37,3 +37,39 @@ h1 {
   width: 40vw;
   height: calc(100vh - 65px);
 }
+
+.learn{
+  display: inline-block;
+  margin-left: 20%;
+  margin-top: 4%;
+  font-size: 16px;
+}
+
+.join {
+  display: inline-block;
+  margin-left: 5%;
+  margin-top: 4%;
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.learn:hover {
+  -webkit-transform: scale(1.2);
+}
+
+.join:hover {
+  -webkit-transform: scale(1.2);
+}
