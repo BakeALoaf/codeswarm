@@ -1,12 +1,24 @@
 <div class="homepage">
-  <% if current_user %>
-    <h1>Logged in make a choice</h1>
-      <%= form_tag page_path(current_user), method: :patch do %>
-        <%= hidden_field :user, :setup, value: true %>
-        <%= hidden_field :user, :role, value: "Client" %>
-        <%= submit_tag "Client" %>
-      <% end %>
-        <%= link_to 'Freelancer', new_freelancespec_path %>
+  <div class="choicebody">
+    <% if current_user %>
+      <div class="choice">
+          <h2>Join as a Client or Freelancer</h2>
+        <div class="client">
+            <%= form_tag page_path(current_user), method: :patch do %>
+              <%= hidden_field :user, :setup, value: true %>
+              <%= hidden_field :user, :role, value: "Client" %>
+            <%# <div class="clientbt"> %>
+              <%= submit_tag "I'm a client, looking for a skilled Freelancer", class: "clientbt" %>
+          <%# </div> %>
+            <% end %>
+        </div>
+          <div class="freelancer">
+            <div class ="freebt">
+              <%= link_to "I'm a Freelancer, looking for Experience", new_freelancespec_path %>
+            </div>
+          </div>
+        </div>
+  </div>
   <% else %>
     <div class = "titlehome">
       <h2>The Junior Developer Freelance Hub</h2>

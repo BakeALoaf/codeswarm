@@ -22,11 +22,11 @@
         <div class="tagfield">
           <% languages = ["Python", "Ruby", "Java", "JavaScript", "C#", "PHP", "C++", "Swift", "kotlin", "Typescript", "Go", "Rust", "SQL", "HTML",
           "CSS", "ShellScripting", "Perl", "R", "MATLAB", "Lua", "Scala", "Dart", "Julia", "Haskell"] %>
-          <% languages.each do |lang| %>
-            <%= label_tag lang %>
-            <%= check_box_tag "project[tags][]", lang %>
-          <% end %>
-        </div>
+            <% languages.each do |lang| %>
+              <%= label_tag lang %>
+              <%= check_box_tag "project[tags][]", lang %>
+            <% end %>
+          </div>
         <div class="actions">
           <%= f.submit %>
         </div>

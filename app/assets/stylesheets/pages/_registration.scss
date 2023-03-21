@@ -1,11 +1,15 @@
-.loginbody {
+.regibody {
   height: calc(100vh - 65px);
   width: 100vw;
   background-color: white;
   text-align: center;
 }
 
-.login {
+.regi h2 {
+  font-family: monospace;
+}
+
+.regi {
   border-radius: 5px;
   margin-top: 3%;
   height: 85%;
@@ -17,12 +21,12 @@
   font-family: monospace;
 }
 
-.login p {
+.regi p {
   color: #acacac;
   margin-top: 10%;
 }
 
-.login img {
+.regi img {
   width: 60%;
   padding-bottom: 20%;
 }
@@ -37,10 +41,6 @@
   border-bottom-width: thin;
 }
 
-.forgot {
-  float: right;
-}
-
 .form-actions:hover {
   -webkit-transform: scale(1.2);
 }
@@ -49,12 +49,13 @@ input[type="email"]::placeholder {
  font-family: monospace;
 }
 
-input[type="current-password"]::placeholder {
+input[type="new-password"]::placeholder {
   font-family: monospace;
  }
 
-.form-inputs input[type="email"],
-.form-inputs input[type="password"] {
+.regi .form-inputs input[type="email"],
+.regi .form-inputs input[type="password"],
+.regi .form-inputs input[type="password_confirmation"] {
   border: none;
   background-color: transparent;
   height: 1%;
