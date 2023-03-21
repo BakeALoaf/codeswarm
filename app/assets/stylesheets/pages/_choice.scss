@@ -1,0 +1,55 @@
+.choicebody {
+  height: calc(100vh - 65px);
+  width: 100vw;
+  background-color: white;
+  text-align: center;
+}
+
+.choice {
+  width: 50%;
+  height: 70%;
+  border-style: solid;
+  border-color: #acacac;
+  display: inline-block;
+  border-radius: 10px;
+  margin-top: 5%;
+}
+
+.choice h2 {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.client {
+  width: 40%;
+  height: 40%;
+  border-style: solid;
+  border-color: #acacac;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.clientbt {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: white;
+  border: none;
+  margin-top: 10%;
+}
+
+.freebt {
+  width: 70%;
+  height: 100%;
+  float: left;
+  margin-top: 10%;
+}
+
+.freelancer {
+  width: 40%;
+  height: 40%;
+  border-style: solid;
+  border-color: #acacac;
+  display: inline-block;
+  border-radius: 10px;
+}
