@@ -22,6 +22,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, tags:[])
+    params.require(:project).permit(:title, :description, :photo, tags:[])
   end
 end
