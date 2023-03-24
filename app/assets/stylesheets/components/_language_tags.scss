@@ -1,0 +1,26 @@
+.tag-container {
+  display: inline-block;
+}
+
+.tag-selector + .tag-name {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #f2eaff;
+  color: #9e7fca;
+  border: 1.2px solid #9e7fca;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector:checked + .tag-name {
+  background-color: #9e7fca;
+  color: white;
+}
