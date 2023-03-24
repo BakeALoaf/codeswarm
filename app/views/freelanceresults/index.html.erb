@@ -6,7 +6,7 @@
             <p>Title: <%= project.title%></p>
             <p>Description: <%= project.description%></p>
         <%end%>
-        <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag @projects.first.photo.key, height: 300, width: 400, crop: :fill %>
     <%else%>
       <h1>New Project</h1>
       <%= form_for @project do |f| %>
